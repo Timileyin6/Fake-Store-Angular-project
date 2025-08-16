@@ -1,0 +1,41 @@
+<div>
+  @if(cartProducts | async; as products) {
+      @if(products && products.length > 0) {
+        <div class="body">
+    <h2>Featured Products</h2>
+    <div class="cartContainer">
+    <div class="demo-grid">
+        <div *ngFor="let product of cartProducts | async" class="product-card">
+            <div class="product-image">
+                <img [src]="product.image" alt="{{product.title}}" class="product-image" />
+            </div>
+            <div>
+            <h3 class="product-title">{{product.title}} </h3>
+            <p class="product-description">{{product.description}} </p>
+            <p class="product-price">{{product.price | currency: 'NGN' }} </p>
+            <div class="quantity-display">
+                    <button class="decrease quantity-btn" (click)="decrement(product)">-</button>
+                    <div class=" quantity-btn">{{product.quantity}} </div>
+                    <button class="increase quantity-btn" (click)="increment(product)">+</button>
+                </div>
+                <button (click)="removeFromCart(product.id)" class="btn">Remove From Cart</button>
+            
+            </div>
+            
+                
+             
+        </div>
+    </div>
+    <div class="cartTotal">
+        <h3>Subtotal ({{getTotalItems() | async}} items): {{getTotalPrice() | async | currency: 'NGN':'symbol':'1.2-2'}} </h3>
+        <button routerLink="/cart/checkout" class="btn">Proceed to Checkout</button>
+    </div>
+    </div>
+</div>
+
+    }@else {
+        <div class="body">
+            <h2>There are no items in the cart</h2>
+        </div>
+    }}
+</div>

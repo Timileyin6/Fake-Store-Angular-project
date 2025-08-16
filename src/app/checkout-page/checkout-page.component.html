@@ -1,0 +1,32 @@
+<div>
+
+        <div style="margin-top: 200px;" class="checkoutPageContainer">
+    <div id="receipt-section">
+    <h3>Reciept</h3>
+    <p>Thanks for patronizing Us</p>
+    <h2>Summary</h2>
+    <table class="basic-table">
+        <thead>
+            <tr>
+            <td>S/N</td>
+            <td>Item</td>
+            <td>Amount</td>
+            </tr>
+        </thead>
+        @for (product of cart |async; track $index; let i = $index) {
+                    <tbody>
+                        <tr>
+                            <td>{{i+1}} </td>
+                            <td>{{product.title}} (x{{product.quantity}}) </td>
+                            <td>{{getOnlyProductTotal(product) | currency: 'NGN' :'symbol': '1.2-2'}} </td>
+                        </tr>
+                    </tbody>
+        }
+    </table>
+    </div>
+
+    <button (click)="downloadPDF()" class="btn">Download Reciept</button>
+</div>
+
+
+</div>

@@ -1,0 +1,24 @@
+<div>
+    <h3>MidaOmni</h3>
+    <h6>Welcome Back, </h6>
+    <p>Please enter your login details to log in to your account.</p>
+
+    <form [formGroup]="login">
+        <div><p>Email Address: </p>
+        <input formControlName="email" required type="email" name="email" /></div>
+        <div>
+        <p>Password: </p>
+        <input formControlName="password" type="password" name="password" required />
+        </div>
+        <div>
+            <p>Customer Id</p>
+            <input formControlName="buyerId" required type="text" />
+        </div>
+        <div>
+            <p>Admin Id</p>
+            <input formControlName="adminId" type="text" required />
+        </div>
+        <button [disabled]="login.get('buyerId')?.invalid" type="submit">Login as Buyer</button>
+        <button [disabled]="login.get('adminId')?.invalid" type="submit">Login as Admin</button>
+    </form>
+</div>

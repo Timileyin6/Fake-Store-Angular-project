@@ -1,0 +1,19 @@
+<div class="navbar">
+    <h2 class="navbar-logo">ShopEasy</h2>
+    <div >
+        <ul class="navbar-nav">
+            <li>
+                <a routerLink="home" class="links" routerLinkActive="active">Home  </a>
+            </li>
+             <li>
+                <a routerLink="cart" class="links" routerLinkActive="active">Cart <span class="carti">{{getTotalQuantity() | async}} </span></a>
+            </li>
+             <li>
+                <a class="links" routerLink="wishlist" routerLinkActive="active">Wishlist</a>
+            </li>
+             <li>
+                <a class="links" routerLink="profile" routerLinkActive="active">Profile</a>
+            </li>
+        </ul>
+    </div>
+</div>

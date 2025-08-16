@@ -1,0 +1,17 @@
+<div >
+    @if(mainProduct){
+        <div class="body">
+        <div class="product-card">
+            <div class="image-container product-image">
+                <img [src]="mainProduct.image" alt="{{mainProduct.title}}" />
+            </div>
+            <div class="description-container product-content">
+            <h3 class="product-title">{{mainProduct.title}} </h3>
+            <p class="product-description">{{mainProduct.description}} </p>
+            <p class="product-price">{{mainProduct.price | currency: 'NGN' : 'symbol' : '1.2-2'}} </p>
+                <button class="btn" (click)="addToCart()">Add To Cart</button>
+             </div>
+        </div>
+        </div>
+    }
+</div>

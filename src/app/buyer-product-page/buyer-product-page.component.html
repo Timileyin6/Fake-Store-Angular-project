@@ -1,0 +1,27 @@
+<div class="body">
+    <div>
+    <div class="products-container">
+            <h2>Featured Products</h2>
+            <div>
+                <select (ngModelChange)="filterBySelect($event)" [(ngModel)]="category">
+                    <option value="recommended">Recommended</option>
+                    <option value={{category}} *ngFor="let category of categories | async">{{category | titlecase}}</option>
+                </select>
+            </div>
+        <div *ngFor="let product of products | async" class="product-card">
+            <div class="image-container product-image" (click)="goToProduct(product.id)">
+                <img [src]="product.image" alt="{{product.title}}" />
+            </div>
+            <div class="description-container product-content">
+            <h3 class="product-title">{{product.title}} </h3>
+            <p class="product-description">{{product.description}} </p>
+            <p class="product-price">{{product.price | currency: 'NGN' : 'symbol' : '1.2-2'}} </p>
+               <div style="display: flex; gap: 10px;" >
+                 <button class="btn" (click)="addToCart(product)">Add To Cart</button>
+                  <button class="btn" (click)="addToWishlist(product)">Add To Wishlist</button>
+               </div>
+             </div>
+        </div> 
+    </div>
+    </div>
+</div>
