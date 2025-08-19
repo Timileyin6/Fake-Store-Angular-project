@@ -17,8 +17,12 @@
             <p class="product-description">{{product.description}} </p>
             <p class="product-price">{{product.price | currency: 'NGN' : 'symbol' : '1.2-2'}} </p>
                <div style="display: flex; gap: 10px;" >
-                 <button class="btn" (click)="addToCart(product)">Add To Cart</button>
-                  <button class="btn" (click)="addToWishlist(product)">Add To Wishlist</button>
+                 <button class="btn" (click)="addToCart(product)">
+                    <i class="fa-solid fa-cart-shopping grey"></i>
+                    Add To Cart</button>
+                  <button class="btn" (click)="addToWishlist(product)">
+                    <i class="fa-solid fa-heart grey"></i>
+                    Add To Wishlist</button> 
                </div>
              </div>
         </div> 

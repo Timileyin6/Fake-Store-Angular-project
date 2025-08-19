@@ -10,6 +10,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
+            background-color: grey;
             font-size: 0.875rem;
             display: flex;
             align-items: center;
@@ -17,12 +18,15 @@
             gap: 0.5rem;
         }
 
+        .grey{
+          background-color: gray;
+        }
+
 
         /* Image Container */
      .product-card {
   display: flex;
   gap: 20px;
-  background: #fff;
   overflow: hidden;
   padding: 20px;
   align-items: center;

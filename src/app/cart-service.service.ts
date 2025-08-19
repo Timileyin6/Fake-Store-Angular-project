@@ -78,6 +78,6 @@ export class CartServiceService {
 }
 
 public clearCart(): void{
-    this.cartItems= of([])
+    this.cartItemsSubject.next([])
   }
 } 

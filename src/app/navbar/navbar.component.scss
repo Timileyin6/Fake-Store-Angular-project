@@ -4,40 +4,47 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95); /* Surface white with blur */
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 0.75rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
-.carti{
-  background-color: rgb(245, 72, 72);
-  padding: 7px;
-  color: white;
-  border-radius: 5px;
+/* Cart button */
+.carti {
+  background-color: #2563eb; /* Primary Blue */
+  padding: 7px 12px;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+.carti:hover {
+  background-color: #1e40af; /* Darker blue hover */
 }
 
+/* Logo */
 .navbar-logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #1f2937; /* Dark Gray */
   text-decoration: none;
   transition: transform 0.2s ease;
 }
-
 .navbar-logo:hover {
   transform: scale(1.05);
 }
 
+/* Nav links */
 .navbar-nav {
   display: flex;
   align-items: center;
@@ -46,11 +53,9 @@
   margin: 0;
   padding: 0;
 }
-
 .navbar-nav li {
   position: relative;
 }
-
 .navbar-nav a {
   color: #4b5563;
   text-decoration: none;
@@ -58,22 +63,52 @@
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: all 0.2s ease;
-  position: relative;
-  overflow: hidden;
 }
-
 .navbar-nav a:hover {
-  color: #3b82f6;
-  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+  background: rgba(59, 130, 246, 0.08);
   transform: translateY(-1px);
 }
-
 .navbar-nav a.active {
-  color: #3b82f6;
-  background: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+  background: rgba(59, 130, 246, 0.12);
+  font-weight: 600;
 }
 
-.active{
-  font-weight: bold;
-  background-color: lightblue;
+/* ===== Responsive ===== */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-nav {
+    display: none; /* hide links by default */
+    flex-direction: column;
+    gap: 1rem;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
+  }
+
+  .navbar-nav.show {
+    display: flex; /* show links when toggled */
+  }
+
+  .hamburger {
+    display: block; /* show hamburger icon */
+  }
 }

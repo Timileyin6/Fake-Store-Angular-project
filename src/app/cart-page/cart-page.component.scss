@@ -1,5 +1,12 @@
-.body {
-  padding-top: 80px;
+.emptyBody {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body{
+    padding-top: 80px;
 }
 
  .product-card {
@@ -63,6 +70,11 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
+        .empty-cart{
+            font-size: 200px;
+        }
+        
 
        
         /* Price Section */
@@ -156,6 +168,7 @@
 
         .btn {
             padding: 0.75rem 1.5rem;
+            background-color: grey;
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -172,22 +185,34 @@
 
        
 
-        /* Responsive */
-        @media (max-width: 250px) {
-            body {
-                padding: 1rem;
-                gap: 1rem;
-            }
+@media (max-width: 1024px) {
+  .cartContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 
-            .product-card {
-                width: 100%;
-                max-width: 400px;
-            }
+  .demo-grid,
+  .cartTotal {
+    max-width: 100%;
+  }
+}
 
-            .product-actions {
-                flex-direction: column;
-            }
-        }
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .cartContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 
         /* Demo Grid Layout */
          .products-container{
@@ -200,16 +225,19 @@
 
        .cartContainer{
         display: flex;
+        flex-wrap: wrap;
         gap: 5%;
         padding: 10px;
        }
 
        .demo-grid{
-        width: 70%;
+        flex: 3;              /* take more space */
+  min-width: 300px;
+  max-width: 900px;
+  width: 100%;
        }
 
        .cartTotal{
-        width: 20%;
         height: 200px;
         background-color: white;
           box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -218,4 +246,13 @@
           align-items: center;
           justify-content: center;
           padding: 10px;
+            flex: 1;              /* smaller column */
+  min-width: 220px;
+  max-width: 300px;
+  width: 100%;
+
        }
+
+     
+
+

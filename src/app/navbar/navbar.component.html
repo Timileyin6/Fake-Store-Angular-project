@@ -1,7 +1,8 @@
 <div class="navbar">
     <h2 class="navbar-logo">ShopEasy</h2>
     <div >
-        <ul class="navbar-nav">
+        <i class="fa-solid fa-bars hamburger" (click)="toggleLinks()"></i>
+        <ul [ngClass]= "['navbar-nav', isLinkOpen()===true ? 'show' : '']" >
             <li>
                 <a routerLink="home" class="links" routerLinkActive="active">Home  </a>
             </li>
@@ -11,9 +12,7 @@
              <li>
                 <a class="links" routerLink="wishlist" routerLinkActive="active">Wishlist</a>
             </li>
-             <li>
-                <a class="links" routerLink="profile" routerLinkActive="active">Profile</a>
-            </li>
+            
         </ul>
     </div>
 </div>
