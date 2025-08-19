@@ -98,21 +98,38 @@
 
        
         /* Responsive */
-        @media (max-width: 250px) {
-            body {
-                padding: 1rem;
-                gap: 1rem;
-            }
+       /* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+    align-items: flex-start;
+    display: block;
+  }
 
-            .product-card {
-                width: 100%;
-                max-width: 400px;
-            }
+  .product-image {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* widescreen style on mobile */
+  }
 
-            .product-actions {
-                flex-direction: column;
-            }
-        }
+  .product-content {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%; /* buttons full width on mobile */
+  }
+
+  .product-title {
+    font-size: 1rem;
+  }
+
+  .product-description {
+    font-size: 0.8rem;
+  }
+}
 
         /* Demo Grid Layout */
        .products-container{
