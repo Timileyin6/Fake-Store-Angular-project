@@ -16,14 +16,17 @@ import { Observable,of } from 'rxjs';
   styleUrl: './checkout-page.component.scss'
 })
 export class CheckoutPageComponent implements OnInit{
-  public cart: Observable<Product[]> = of([])
+  public cart: Product[] = []
   constructor(
     private cartService: CartServiceService
   ){}
   
   ngOnInit(): void {
-         this.cart= this.cartService.getItems()
-             this.cartService.clearCart() 
+         this.cart= this.cartService.getBehaviourals().value
+               setTimeout(() => {
+    this.cartService.clearCart();
+  }, 0);
+ 
   }
 
   public getOnlyProductTotal(product: Product): number{

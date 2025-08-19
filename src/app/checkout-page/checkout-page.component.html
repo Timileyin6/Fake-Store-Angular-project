@@ -13,7 +13,7 @@
             <td>Amount</td>
             </tr>
         </thead>
-        @for (product of cart |async; track $index; let i = $index) {
+        @for (product of cart; track $index; let i = $index) {
                     <tbody>
                         <tr>
                             <td>{{i+1}} </td>

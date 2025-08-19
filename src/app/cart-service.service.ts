@@ -63,6 +63,10 @@ export class CartServiceService {
     return this.cartItems
   }
 
+  public getBehaviourals() : BehaviorSubject<Product[]>{
+    return this.cartItemsSubject
+  }
+
   public productQuantity(productId: number, product:Product){
     const inCart =  this.cartItems.pipe(map(items => items.find(item=> item.id == productId)))
     return inCart?product.quantity:0
